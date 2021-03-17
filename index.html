@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <link rel="stylesheet" href="styles.css">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grocery List</title>
+	<link rel="stylesheet" href="styles.css">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Grocery List</title>
 </head>
+
 <body>
-    <h1>Grocery List</h1>
-    <div class="list-container">
-        <ul class="list" id="list">
-            <li class="item" id="item">Filler Text <button>x</button></li>
-            <li class="item" id="item">Some other filler text <button>x</button></li>
-        </ul>
-    </div>
-
-    <h4>Add an item to the list below</h4>
-    
-    <div class="input-container">
-        <input type="text" id="text" placeholder="Grocery Item">
-        <button class="addBtn" id="addBtn">Add</button>
-    </div>
-
-    
-    <script src="scripts.js"></script>
+	<h1>Grocery List</h1>
+	<div class="main-container">
+		<div class="list-container">
+			<ul class="list" id="list">
+				<li class="item" id="item"><button class="deleteBtn" id="deleteBtn">X</button><button class="checkBtn" id="checkBtn">✔</button>Filler Text
+				</li>
+				<li class="item" id="item"><button class="deleteBtn" id="deleteBtn">X</button><button class="checkBtn" id="checkBtn">✔</button>Some other filler text
+				</li>
+			</ul>
+		</div>
+		<h4>Add an item to the list below</h4>
+		<div class="input-container">
+			<input type="text" id="text" placeholder="Enter Grocery Item">
+			<button class="addBtn" id="addBtn">Add</button>
+		</div>
+	</div>
+	<script src="scripts.js"></script>
 </body>
+
 </html>
