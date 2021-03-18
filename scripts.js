@@ -1,9 +1,9 @@
 const list = document.getElementById("list");
 const text = document.getElementById("text");
 const addBtn = document.getElementById("addBtn");
-const deleteBtn = document.getElementById("deleteBtn");
-const checkBtn = document.getElementById("checkBtn");
-const form = document.getElementById("form");
+
+
+
 
 
 
@@ -23,14 +23,31 @@ function addItemToDOM() {
         //add the li element to the list (DOM). 
         list.appendChild(newLi);
         text.value = "";
-        console.log(this.parentNode);
-        console.log(this.deleteBtn.parentNode);
-        deleteBtn.addEventListener("click", deleteItem); 
+        //create a variable for the delete/check button now that it exists. 
+        const deleteBtn = document.getElementById("deleteBtn");
+        const checkBtn = document.getElementById("checkBtn");
+        console.log(checkBtn);
+        //event listener fot the delete button.
+        deleteBtn.addEventListener("click", deleteItem);
+        checkBtn.addEventListener("click", checkOffItem);
+         
     }
 }
 
-function deleteItem(){
-    console.log(this.deleteBtn.parentNode);
+function deleteItem(event){
+    event.target.parentNode.remove();
+    
+}
+
+function checkOffItem(event){
+    if(checkBtn.innerHTML === "✔"){
+        event.target.parentNode.style.textDecorationLine = "line-through";
+        checkBtn.innerHTML = "↩";
+    } else {
+        event.target.parentNode.style.textDecorationLine = "none";
+        checkBtn.innerHTML = "✔";
+    }
+    
 }
 
 
