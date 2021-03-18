@@ -13,11 +13,82 @@ body {
     min-height: 100vh;
     margin:0;
     font-family: "Lato", sans-serif;
+    background: url(img/Fruit_Vegetables.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size:cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
 }
 
 .main-container {
     width:350px;
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 100;
+    border-radius: 5px;
+    width:50%;
+    padding: 50px;
 }
+
+@media (max-width: 800px) {
+    .main-container {
+        width:350px;
+        background-color: rgba(255, 255, 255, 0.7);
+        z-index: 100;
+        border-radius: 5px;
+        width:50%;
+        padding: 50px;
+    }
+  }
+
+
+  @media (max-width: 600px) {
+    .main-container {
+        width:85%;
+    }
+    li {
+        margin:0;
+        transform: translate(-70%);
+    }
+
+    ul {
+        display: inline-block;
+    }
+
+  }
+
+  @media (max-width: 600px) {
+    .main-container {
+        width:85%;
+    }
+    li {
+        margin:0;
+        transform: translate(-70%);
+    }
+
+    ul {
+        display: inline-block;
+    }
+
+  }
+
+  @media (max-width: 280px) {
+    .main-container {
+        width:85%;
+    }
+    li {
+        margin:0;
+        transform: translate(-70%);
+        font-size: 15px
+    }
+
+    ul {
+        display: inline-block;
+    }
+
+  }
+
 
 h1 {
     letter-spacing: 1px;
@@ -37,12 +108,12 @@ h4 {
     padding:0;
     margin: 50px 0;
     align-content: center;
-}
-.list-container li {
-    list-style-type: symbols(🧑);
-    list-style-position: outside;
+    
 }
 
+.list-container li {
+    list-style-type: none;
+}
 .deleteBtn{
     cursor:pointer;
     background-color: rgba(216, 44, 22, 1);
@@ -75,9 +146,9 @@ h4 {
 
 
 .deleteBtn:active, .checkBtn:active{
-    background-color: white;
-    line-height: 5px;
-    transition: opacity 0.2 ease;
+    background-color: rgba(255, 255, 255, 0);
+    color: rgba(255, 255, 255, 0);
+    transition: opacity 0.5 ease;
 
 }
 
