@@ -12,25 +12,18 @@ function addItemToDOM() {
     if (text.value.trim() === "") {
         alert("please add a grocery item")
     } else {
+        console.log("we are adding to the DOM!")
         //create a variable for the input
         let input = text.value;
         //create a new li element. 
         let newLi = document.createElement("li");
         //specify what the innerHTML is going to be inside the new li element
-        let addedItem = newLi.innerHTML = `<button class="deleteBtn" id="deleteBtn">X</button><button class="checkBtn" id="checkBtn">✔</button>•${input}`;
+        let addedItem = newLi.innerHTML = `<button class="deleteBtn" onclick="deleteItem(event)">X</button><button class="checkBtn" onclick="checkOffItem(event)">✔</button>•${input}`;
         //new li inner html
         newLi.innerHTML = addedItem;
         //add the li element to the list (DOM). 
         list.appendChild(newLi);
         text.value = "";
-        //create a variable for the delete/check button now that it exists. 
-        const deleteBtn = document.getElementById("deleteBtn");
-        const checkBtn = document.getElementById("checkBtn");
-        console.log(checkBtn);
-        //event listener fot the delete button.
-        deleteBtn.addEventListener("click", deleteItem);
-        checkBtn.addEventListener("click", checkOffItem);
-         
     }
 }
 
@@ -40,13 +33,16 @@ function deleteItem(event){
 }
 
 function checkOffItem(event){
-    if(checkBtn.innerHTML === "✔"){
+    console.log("we are at the checkoff funct!");
+    console.log(event);
+    if(event.target.innerHTML === "✔"){
         event.target.parentNode.style.textDecorationLine = "line-through";
-        checkBtn.innerHTML = "↩";
+        event.target.innerHTML = "↩";
     } else {
         event.target.parentNode.style.textDecorationLine = "none";
-        checkBtn.innerHTML = "✔";
+        event.target.innerHTML = "✔"; 
     }
+    console.log(event.target.innerHTML); 
     
 }
 
