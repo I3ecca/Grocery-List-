@@ -34,9 +34,10 @@ function deleteItem(event){
 //Checks off by crossing out list item and undo if needed. 
 function checkOffItem(event){
     console.log("we are at the checkoff funct!");
-
+    // setting the individual event target to a variable. 
     let checkBtn = event.target;
-
+    //if the checkbtn is a check, cross off and change to an undo btn. 
+    //if it is not a check btn, reomve the linethrough and change back to a check. 
     if(checkBtn.innerHTML === "✔"){
         checkBtn.parentNode.style.textDecorationLine = "line-through";
         checkBtn.innerHTML = "↩";
